@@ -1,0 +1,97 @@
+<MainManger>:
+	MDScreenManager:
+		id:global_manager
+
+		MDScreen:
+			name: 'main'
+
+			MDNavigationRail:
+
+		    	MDNavigationRailItem:
+		    		text: 'Плеер'
+		    		icon: 'music-box'
+
+		    	MDNavigationRailItem:
+		    		text: 'Плейлисты'
+		    		icon: 'playlist-play'
+
+				MDNavigationRailItem:
+					text: 'Скачивание'
+		    		icon: 'download-box'
+
+				MDNavigationRailItem:
+					text: 'Настройки'
+		    		icon: 'cog'
+
+			MDScreenManager:
+				id:main_manger
+
+				MDScreen:
+					name: 'player'
+
+				MDScreen:
+					name: 'playlist'
+
+				MDScreen:
+					name: 'download'
+
+				MDScreen:
+					name: 'settings'
+
+		MDScreen:
+			name:'welcome'
+
+			MDScreenManager:
+				id: welcome_manger
+
+				MDScreen:
+					name: 'frist'
+
+					MDBoxLayout:
+						orientation: 'vertical'
+
+						FitImage:
+							source: ""
+
+						MDLabel:
+							text:"Тесовый слайд"
+							halign: 'center'
+
+				MDScreen:
+					name: 'second'
+
+					MDBoxLayout:
+						orientation: 'vertical'
+
+						FitImage:
+							source: ""
+
+						MDLabel:
+							text:"Тесовый слайд"
+							halign: 'center'
+
+				MDScreen:
+					name: 'third'
+
+					MDBoxLayout:
+						orientation: 'vertical'
+
+						FitImage:
+							source: ""
+
+						MDLabel:
+							text:"Тесовый слайд"
+							halign: 'center'
+
+				MDScreen:
+					name: 'finis'
+
+					MDBoxLayout:
+						orientation: 'vertical'
+
+						FitImage:
+							source: ""
+
+						MDLabel:
+							text:"Финальный тесовый слайд"
+							halign: 'center'
