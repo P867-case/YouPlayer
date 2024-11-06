@@ -1,42 +1,166 @@
 <MainManger>:
-	MDScreenManager:
+	ScreenManager:
 		id:global_manager
 
 		MDScreen:
 			name: 'main'
 
-			MDNavigationRail:
+            MDBoxLayout:
 
-		    	MDNavigationRailItem:
-		    		text: 'Плеер'
-		    		icon: 'music-box'
+                MDNavigationRail:
 
-		    	MDNavigationRailItem:
-		    		text: 'Плейлисты'
-		    		icon: 'playlist-play'
+					MDNavigationRailItem:
+						text: "Плеер"
+						icon: "play"
+						on_press:
+							root.change_main_scenes('player')
 
-				MDNavigationRailItem:
-					text: 'Скачивание'
-		    		icon: 'download-box'
+					MDNavigationRailItem:
+						text: "Очередь"
+						icon: "view-list"
+						on_press:
+							root.change_main_scenes('queue')
 
-				MDNavigationRailItem:
-					text: 'Настройки'
-		    		icon: 'cog'
+					MDNavigationRailItem:
+						text: "Плейлисты"
+						icon: "playlist-music"
+						on_press:
+							root.change_main_scenes('playlist')
 
-			MDScreenManager:
-				id:main_manger
+					MDNavigationRailItem:
+						text: "Скачивания"
+						icon: "progress-download"
+						on_press:
+							root.change_main_scenes('download')
 
-				MDScreen:
-					name: 'player'
+					MDNavigationRailItem:
+						text: "Настройки"
+						icon: "cog"
+						on_press:
+							root.change_main_scenes('settings')
 
-				MDScreen:
-					name: 'playlist'
 
-				MDScreen:
-					name: 'download'
+                ScreenManager:
+                    id: screen_manager
 
-				MDScreen:
-					name: 'settings'
+					MDScreen:
+						name:"player"
+						
+						MDBoxLayout:
+							padding: [60,80]
+
+							MDCard:
+								MDGridLayout:
+									cols:1
+									rows:2
+
+									MDBoxLayout:
+										orientation:'vertical'
+										MDLabel:
+											id:Title
+											text:'Title of treack'
+											halign:'center'
+											size_hint_y:.2
+											font_size:30
+
+										MDSeparator:
+										MDBoxLayout:
+											orientation:'vertical'
+											padding: [20, 0]
+											MDLabel:
+												id:Artist
+												text:'Artist of treack'
+												size_hint_y:.2
+												font_size:25
+
+											MDLabel:
+												id:Duration
+												text:'Duration of treack'
+												size_hint_y:.2
+												font_size:25
+
+											MDLabel:
+												id:Albom
+												text:'Albom of treack'
+												size_hint_y:.2
+												font_size:25
+
+											MDBoxLayout
+
+									MDGridLayout:
+										cols:1
+										rows:2
+										size_hint_y:.35
+										padding: [20, 0]
+
+										MDBoxLayout:
+											MDLabel:
+												text:'00:00'
+												halign: 'center'
+												size_hint_x:0.2
+
+											MDSlider:
+
+											MDLabel:
+												text:'00:00'
+												halign: 'center'
+												size_hint_x:0.2
+
+										MDGridLayout:
+											cols:1
+											rows:2
+											size_hint_y:.2
+
+											MDBoxLayout:
+												size_hint_y:.3
+												MDBoxLayout:
+
+												MDIconButton:
+													icon:'skip-previous'
+													on_press:
+														root.change_image('prev')
+
+
+												MDIconButton:
+													icon:'play'
+
+
+												MDIconButton:
+													icon:'skip-next'
+													on_press:
+														root.change_image('next')
+
+												MDBoxLayout:
+
+											MDBoxLayout:
+
+
+								MDBoxLayout:
+									FitImage:
+										id:albom
+										source:'Images/cash.png'
+
+
+
+					MDScreen:
+						name:"queue"
+						MDLabel:
+							text:'Queue'
+
+					MDScreen:
+						name:"playlist"
+						MDLabel:
+							text:'Playlist'
+
+					MDScreen:
+						name:"download"
+						MDLabel:
+							text:'Download'
+
+					MDScreen:
+						name:"settings"
+						MDLabel:
+							text:'Settings'
 
 		MDScreen:
 			name:'welcome'

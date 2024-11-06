@@ -15,3 +15,5 @@ option_primary_palette = [
     'Orange', 'DeepOrange',
     'Brown', 'Gray', 'BlueGray'
 ]
+
+fadetrasnsition_time = 0.3

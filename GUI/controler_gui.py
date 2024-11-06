@@ -1,8 +1,12 @@
-from kivymd.app import MDApp
+from kivy.uix.screenmanager import FadeTransition
 from kivymd.uix.boxlayout import MDBoxLayout
-from .setting_gui import *
 from System.Json_Api import Proccesing_file
+from kivymd.app import MDApp
+from .setting_gui import *
 import webbrowser
+
+from kivymd.uix.screen import MDScreen
+from kivymd.uix.fitimage import FitImage
 
 
 class MainManger(MDBoxLayout):
@@ -11,8 +15,18 @@ class MainManger(MDBoxLayout):
         self.data_file = Proccesing_file()
         self.frist = self.data_file.data['app_session']['frist_start']
 
-        if self.frist == True:
+        if self.frist is True:
             self.ids.global_manager.current = 'welcome'
+
+    def change_image(self, *args):
+        self.ids.albom.source = 'Images/UI.png'
+        self.ids.albom.reload()
+
+    def change_main_scenes(self, name: str):
+        self.ids.screen_manager.transition = FadeTransition(
+            duration=fadetrasnsition_time
+        )
+        self.ids.screen_manager.current = name
 
     def open_web_pay(self, *args):
         webbrowser.open_new_tab(
