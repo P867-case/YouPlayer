@@ -2,6 +2,7 @@ from kivymd.app import MDApp
 from kivymd.uix.boxlayout import MDBoxLayout
 from .setting_gui import *
 from System.Json_Api import Proccesing_file
+import webbrowser
 
 
 class MainManger(MDBoxLayout):
@@ -12,6 +13,21 @@ class MainManger(MDBoxLayout):
 
         if self.frist == True:
             self.ids.global_manager.current = 'welcome'
+
+    def open_web_pay(self, *args):
+        webbrowser.open_new_tab(
+            'https://www.tinkoff.ru/rm/cherpakov.artem17/ONiEE52468'
+        )
+        self.data_file.data['app_session']['frist_start'] = False
+        self.data_file.save()
+        self.data_file.update()
+        self.ids.global_manager.current = 'main'
+
+    def set_new_state(self, *args):
+        self.data_file.data['app_session']['frist_start'] = False
+        self.data_file.save()
+        self.data_file.update()
+        self.ids.global_manager.current = 'main'
 
 
 class application(MDApp):

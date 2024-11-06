@@ -47,52 +47,149 @@
 				MDScreen:
 					name: 'frist'
 
-					MDBoxLayout:
-						orientation: 'vertical'
+					MDCard:
+						padding: [40, 40]
+						MDBoxLayout:
+							size_hint_x: .5
+							padding: [20, 20]
+							FitImage:
+								size_hint_y: None
+								size_hint_x: None
+								width: dp(500)
+								height: dp(500)
+								source: "Images/player.png"
+								pos_hint: {'y': 0.3}
 
-						FitImage:
-							source: ""
 
-						MDLabel:
-							text:"Тесовый слайд"
-							halign: 'center'
+						MDBoxLayout:
+							orientation:'vertical'
+							padding: [40,40]
+							MDBoxLayout:
+								MDLabel:
+									font_size: 30
+									text:"YouPlayer mp3 плеер с открытым исходным кодом.\nОн поможет вам слушать ваши любимые треки в оффлайне!\nДавно мучаетесь чтобы скачать трек с вк или soundcould ?\nИли сайты которые вы используете вас не устраивают ?\nТогда попробуйте YP!"
+
+							MDBoxLayout:
+								size_hint_y:.1
+								MDBoxLayout:
+								MDFillRoundFlatIconButton:
+									font_size:25
+									text:"Ага, понятно, а что дальше?"
+									icon:'arrow-right'
+									on_press:
+										root.ids.welcome_manger.current='second'
 
 				MDScreen:
 					name: 'second'
 
-					MDBoxLayout:
-						orientation: 'vertical'
+					MDCard:
+						padding: [40, 40]
+						MDBoxLayout:
+							padding: [20, 20]
+							size_hint_x: .5
+							FitImage:
+								size_hint_y: None
+								size_hint_x: None
+								width: dp(500)
+								height: dp(500)
+								source: "Images/download_music.png"
+								pos_hint: {'y': 0.3}
 
-						FitImage:
-							source: ""
 
-						MDLabel:
-							text:"Тесовый слайд"
-							halign: 'center'
+						MDBoxLayout:
+							orientation:'vertical'
+							padding: [40,40]
+							MDBoxLayout:
+								MDLabel:
+									font_size: 30
+									text:"Скачивай любимые треки со всех плащядок!\n\nSoundColoud\nVk Music\nYT Music\n\nИ другие алтернативныйе сайты, просто укажи ссылку на файл и удобно скачай куда надо!"
+
+							MDBoxLayout:
+								size_hint_y:.1
+								MDBoxLayout:
+								MDFillRoundFlatIconButton:
+									font_size:25
+									text:"Обязательно попробую, а что может ещё YP?"
+									icon:'arrow-right'
+									on_press:
+										root.ids.welcome_manger.current='third'
 
 				MDScreen:
 					name: 'third'
 
-					MDBoxLayout:
-						orientation: 'vertical'
+					MDCard:
+						padding: [40, 40]
+						MDBoxLayout:
+							padding: [20, 20]
+							size_hint_x: .5
+							FitImage:
+								size_hint_y: None
+								size_hint_x: None
+								width: dp(500)
+								height: dp(500)
+								source: "Images/UI.png"
+								pos_hint: {'y': 0.3}
 
-						FitImage:
-							source: ""
 
-						MDLabel:
-							text:"Тесовый слайд"
-							halign: 'center'
+						MDBoxLayout:
+							orientation:'vertical'
+							padding: [40,40]
+							MDBoxLayout:
+								MDLabel:
+									font_size: 30
+									text:"У YP очень простой и понятый дизайн!\n\nПростой и минималистичнй дизайн GUI в связке с понятным UI помогут вам комфортного себя чувствовать.\nКонечно в настройках можно будет поменять цвет и основную тему, ну это так сказать база."
+
+							MDBoxLayout:
+								size_hint_y:.1
+								MDBoxLayout:
+								MDFillRoundFlatIconButton:
+									font_size:25
+									text:"Круто!"
+									icon:'arrow-right'
+									on_press:
+										root.ids.welcome_manger.current='finis'
 
 				MDScreen:
 					name: 'finis'
 
-					MDBoxLayout:
-						orientation: 'vertical'
+					MDCard:
+						padding: [40, 40]
+						MDBoxLayout:
+							padding: [20, 20]
+							size_hint_x: .5
+							FitImage:
+								size_hint_y: None
+								size_hint_x: None
+								width: dp(500)
+								height: dp(500)
+								source: "Images/cash.png"
+								pos_hint: {'y': 0.3}
 
-						FitImage:
-							source: ""
 
-						MDLabel:
-							text:"Финальный тесовый слайд"
-							halign: 'center'
-						
+						MDBoxLayout:
+							orientation:'vertical'
+							padding: [40,40]
+							MDBoxLayout:
+								MDLabel:
+									font_size: 30
+									text:"Ну и на последок хотел бы вам попросить поддержать проект рублем.\n\n 150 рублей мне, а вам часы прослушивания музыки.\nСамо приложение полностью бесплатно, но увы мне приходиться сильно экономить что поддерживать в нем жизнь.\nТак что любая поддержка рублем даст мне понять стоит ли продолжать разработку."
+
+							MDBoxLayout:
+								size_hint_y:.1
+								MDBoxLayout:
+
+								MDBoxLayout:
+									MDFillRoundFlatIconButton:
+										font_size:20
+										text:"Может потом"
+										icon:'timer-sand'
+										on_press:
+											root.set_new_state()
+
+									MDFillRoundFlatIconButton:
+										font_size:25
+										text:"Да! С радостью помогу!"
+										icon:'checkbox-marked-outline'
+										on_press:
+											root.open_web_pay()
+
