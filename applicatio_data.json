@@ -3,5 +3,10 @@
     "creator": "P876-case",
     "app_session": {
         "frist_start": false
-    }
+    },
+    "paths": [],
+    "default_path": [
+        "/home/user/Загрузки",
+        "/home/user/Музыка"
+    ]
 }
